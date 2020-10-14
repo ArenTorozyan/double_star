@@ -1,0 +1,35 @@
+{% extends 'groups/group_base.html' %}
+
+{% block pregroup %}
+<div class="container mycontent">
+    <h1>{{group.name}}</h1>
+    <h2>Member Count: {{group.members.count}}</h2>
+
+    <div class="content">
+        {% if user in group.members.all %}
+        <a href="{% url 'groups:leave' slug=group.slug %}" class='btn btn-lg btn-fill btn-warning button'><i
+                class="fas fa-times-circle"></i> Leave</a>
+        {% else %}
+        <a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-lg btn-primary button"><i
+                class="fas fa-check-circle"></i> Join</a>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}
+
+
+{% block group_content %}
+<div class="col-md-8">
+    {% if group.posts.count == 0 %}
+    <h2>No posts in this group yet!</h2>
+    {% else %}
+        {% for post in group.posts.all %}
+            <!-- "include" injects another html file in the middle of the current html file //
+                        we use "_" before _posts.html, only to indicate for ourselves that 
+                        this template is going to be injected in another html-->
+            {% include 'posts/_post.html' %}
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

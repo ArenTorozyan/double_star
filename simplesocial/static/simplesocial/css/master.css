@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    overflow: scroll;
+    background-color: black;
+    color: white;
+}
+
+.mycontent {
+    padding-top: 20px;
+}
+
+.mynav {
+    background-color: rgba(87, 82, 82, 0.75);
+    background: linear-gradient(90deg, rgb(7, 5, 31, 0.95) 15%, rgb(67, 20, 121, 0.95) 60%, rgb(14, 35, 153, 0.95) 85%);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-left: 20px;
+}
+
+.button {
+    margin-bottom: 20px;
+}
+
+.margin-bottom {
+    margin-bottom: 5px;
+}
+
+.styler {
+    background-color: rgba(255, 255, 255, 0.705);
+    border-radius: 8px;
+    padding: 15px;
+}
